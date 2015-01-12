@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="store">
+<!--META-->
+
 <head>
 <meta charset="UTF-8">
 <meta name="Portfolio" content="Little Menu for Portfolio">
@@ -11,11 +13,22 @@
 <link rel="icon" type="image/png" href="img/logo.png">
 <title>Luis Iván García Luna</title>
 </head>
-<body>
-<h1 class="text-center">Luis Iván García Luna</h1>
 
+<!--Body-->
 
+ <body ng-controller="StoreController as store">
+   <ul class="list-group">
+   <li class="list-group-item" ng-repeat="product in store.products">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+        <button ng-show="product.canPurchase">Add to cart </button>
+      </h3>
+    </li>
+    </ul>
+  </body>
 
+<!--Scripts-->
 <script type="text/javascript" src="http://garlun.net/angular/angular.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>

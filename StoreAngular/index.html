@@ -16,16 +16,24 @@
 
 <!--Body-->
 
- <body ng-controller="StoreController as store">
-   <ul class="list-group">
-   <li class="list-group-item" ng-repeat="product in store.products">
-      <h3>
-        {{product.name}}
-        <em class="pull-right">{{product.price | currency}}</em>
-        <button ng-show="product.canPurchase">Add to cart </button>
-      </h3>
-    </li>
-    </ul>
+ <body class="list-group" ng-controller="StoreController as store">
+    <!--  Product Container  -->
+    <div class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
+      <h1>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+      <h2>{{product.description}}</h2>
+
+      <!-- Image Gallery  -->
+      <div class="gallery">
+        <div class="img-wrap">
+          <img ng-src="{{product.images[0]}}" />
+        </div>
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" >
+            <img ng-src="{{product.images[0]}}" />
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 
 <!--Scripts-->

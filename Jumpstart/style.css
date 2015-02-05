@@ -1,0 +1,33 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url('http://todaymade.com/blog/wp-content/uploads/2013/07/HiRes.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; 
+ width: 1200px;
+  height: 800px;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-filter: grayscale(100%); 
+}
+
+.content {
+  position: fixed;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+o@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
 * {
   box-sizing: border-box;
@@ -108,4 +108,7 @@ h1,p
 }
 
 
-
+#forma {
+  margin-left: 35%;
+  width:30%;
+}

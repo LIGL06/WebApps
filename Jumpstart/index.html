@@ -39,33 +39,7 @@
       <h1 style="font-size:78px;">Diseño Web</h1>
       <p style="font-size:30px;">Nivel: Principiante - Jueves 19 de Febrero</p>
 
-<div>
-<form name="reviewForm">
-             <!--  Live Preview -->
-              <blockquote>
-                <strong>{{review.stars}} Estrellas </strong> <br>
-                {{review.body}}
-                <cite class="clearfix"> por: {{review.author}}</cite>
-              </blockquote>
-              
-              <!--Review form-->
-              <h4>Califica este curso</h4>
-              <fieldset class="form-group">
-                <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" ng-model="review.stars">
-                  <option value="">Rate the Product</option>
-                </select>
-              </fieldset>
-              <fieldset class="form-group">
-                <textarea class="form-control" placeholder="Write a short review of the product..." title="Review" ng-model="review.body"></textarea>
-              </fieldset>
-              <fieldset class="form-group">
-                <input type="email" class="form-control" placeholder="myName@example.org" title="Email" ng-model="review.author"/>
-              </fieldset>
-              <fieldset class="form-group">
-                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-              </fieldset>
-            </form>
-</div>
+
 
     </div>
   </div>
@@ -81,6 +55,33 @@
   <div class="fixed-bg bg-2 pad-me">
     <div>
       <h1 class="text-center" style="font-size:60px;">Estás listo...</h1>
+      <div>
+<form name="reviewForm" class="text-center" id="forma">
+             <!--  Live Preview -->
+              <blockquote>
+                <strong>{{review.stars}} Estrellas </strong> <br>
+                {{review.body}}
+                <cite class="clearfix"> por: {{review.author}}</cite>
+              </blockquote>
+              
+              <!--Review form-->
+              <h4>Califica este curso</h4>
+              <fieldset class="form-group">
+                <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" ng-model="review.stars">
+                  <option value="">Calicifa este curso</option>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea class="form-control" placeholder="¿Qué tal te pareció el curso?" title="Review" ng-model="review.body"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="email" class="form-control" placeholder="miCorreo@ejemplo.com" title="Email" ng-model="review.author"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+              </fieldset>
+            </form>
+</div>
     </div>
   </div>
 </div>

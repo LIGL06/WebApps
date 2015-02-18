@@ -36,22 +36,51 @@
   <!-- for sections with fixed background-->
   <div class="fixed-bg bg-1 parent-vcenter">
     <div class="child-vcenter">
-      <h1 >Diseño Web</h1>
-      Nivel: Principiante - Jueves 19 de Febrero
+      <h1 style="font-size:78px;">Diseño Web</h1>
+      <p style="font-size:30px;">Nivel: Principiante - Jueves 19 de Febrero</p>
+
+<div>
+<form name="reviewForm">
+             <!--  Live Preview -->
+              <blockquote>
+                <strong>{{review.stars}} Estrellas </strong> <br>
+                {{review.body}}
+                <cite class="clearfix"> por: {{review.author}}</cite>
+              </blockquote>
+              
+              <!--Review form-->
+              <h4>Califica este curso</h4>
+              <fieldset class="form-group">
+                <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" ng-model="review.stars">
+                  <option value="">Rate the Product</option>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea class="form-control" placeholder="Write a short review of the product..." title="Review" ng-model="review.body"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="email" class="form-control" placeholder="myName@example.org" title="Email" ng-model="review.author"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+              </fieldset>
+            </form>
+</div>
+
     </div>
   </div>
   <div class="parent-vcenter">
     <div class="child-vcenter pad-me">
       <h1 style="margin:0 ;font-family: 'Ubuntu', sans-serif;  
-  color: black;">Proximos Talleres</h1>
+  color: black; font-size:48px;">Proximos Talleres</h1>
       <br />
       <p style="font-family: 'Ubuntu', sans-serif;  
-  color: black;">#Jumpstart #2015</p>
+  color: black; font-size: 30px;">#ResponsiveDesign #HTML5 #CSS3 #AngularJS #MongoDB </p>
     </div>
   </div>
   <div class="fixed-bg bg-2 pad-me">
     <div>
-      <h1 class="text-center">¿Listo para este 2015?</h1>
+      <h1 class="text-center" style="font-size:60px;">Estás listo...</h1>
     </div>
   </div>
 </div>

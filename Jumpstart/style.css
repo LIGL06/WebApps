@@ -73,12 +73,12 @@ color: #20c05c;
   height: 100%;
   vertical-align: middle;
   margin-right: -0.25em; 
+  margin-top: -3em;
 }
 
 h1,p
 {
   font-family: 'Ubuntu', sans-serif;  
-  color: black;
 }
 
 .child-vcenter {
@@ -89,13 +89,13 @@ h1,p
 }
 
 .fixed-bg.bg-1 {
-  background-image: url("http://sydney.edu.au/images/content/news/2013/aug/02_ncss.jpg");
+  background-image: url("http://jumpstart.garlun.net/talleres/bg1.jpg");
 
 }
 
 .fixed-bg.bg-2 {
-  background-image: url("https://ununsplash.imgix.net/photo-1416949929422-a1d9c8fe84af?fit=crop&fm=jpg&h=700&q=75&w=1050");
-  height: auto;
+  background-image: url("http://jumpstart.garlun.net/talleres/bg2.jpg");
+  height: 530px;
 }
 
 .scrolling-bg { 
@@ -104,7 +104,7 @@ h1,p
 
 
 .pad-me {
-  padding: 1em;
+  padding: 2em;
 }
 
 

@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC);
+
+body{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-image: url();
+}
+#header{
+	position: fixed;
+}
+h1{
+	font-size: 60px;
+	color: black;
+}
+h2{
+	font-size:32px;
+}

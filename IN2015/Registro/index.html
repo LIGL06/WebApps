@@ -14,16 +14,15 @@ Dos días de grandes conferencias + Talleres ¡Asiste! 20 y 21 de Abril" propert
 <title>Registro Internegocios 2015</title> 
 </head>
 <body ng-controller="RegistroController">
-<div class="header">
-<h1 class="text-center">Registro Internegocios 2015</h1>
-<h2 class="text-center">La Revolución del Emprendimiento</h2>
-</div>
 <!-- Stephonce R. MOrris | 2014 -->
 <form action="index.html" method="post">
 
 <!-- Form Title -->
-		<h1>Registro</h1>
-
+<center>
+<h1 class="text-center">Registro Internegocios 2015</h1>
+<h2 class="text-center">La Revolución del Emprendimiento</h2>
+	<img src="img/Internegocios.png" class="img-responsive" alt="logo">
+	</center>
 		<fieldset>
 
 			<legend><span class="number">1</span>Información <abbr title="Information">Básica</abbr></legend>
@@ -42,22 +41,22 @@ Dos días de grandes conferencias + Talleres ¡Asiste! 20 y 21 de Abril" propert
 			<select name="user_age" id="age">
 				<option value="blank">&nbsp;</option>
 <!-- Young -->
-				<optgroup label="Young">
+				<optgroup label="Joven">
 					<option value="lt13">Under 13</option>
 					<option value="teen">13 - 19</option>
 				</optgroup>
 <!-- Prime -->
-				<optgroup label="Prime">
+				<optgroup label="Adulto Joven">
 					<option value="20s">20 - 29</option>
 				</optgroup>
 <!-- Running Out of Time -->
-				<optgroup label="Time's Running Out">
+				<optgroup label="Adulto">
 					<option value="30s">30 - 39</option>
 					<option value="40s">40 - 49</option>
 				</optgroup>
 <!-- Old -->
-				<optgroup label="Old">
-					<option value="50gt">50 or older</option>
+				<optgroup label="Adulto Mayor">
+					<option value="50gt">50 o más</option>
 				</optgroup>
 			</select>
 
@@ -65,15 +64,12 @@ Dos días de grandes conferencias + Talleres ¡Asiste! 20 y 21 de Abril" propert
 
 		<fieldset>
 
-			<legend><span class="number">2</span> Your profile</legend>
-<!-- Username Input -->
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username">
+			<legend><span class="number">2</span>Tus Opciones</legend>
 <!-- Location Input -->
-			<label for="location">Location:</label>
+			<label for="location">Ciudad:</label>
 			<input type="text" id="location" name="location">
 <!-- Bio Input -->
-			<label for="bio"><abbr title="Biography">Bio:</abbr></label>
+			<label for="bio"><abbr title="Biography">Razón de Asistencia:</abbr></label>
 			<textarea name="user_bio" id="bio"></textarea>
 
 			<label>Talleres a Inscribir:</label>
@@ -114,7 +110,7 @@ Dos días de grandes conferencias + Talleres ¡Asiste! 20 y 21 de Abril" propert
 
 		</fieldset>
 
-		<button type="submit">Sign Up</button>
+		<button type="submit">Registrarse</button>
 
 		</form>
 

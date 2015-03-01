@@ -81,8 +81,36 @@ nav {
 }
 
 .img-responsive{
-	max-width: 12em;
-	background: rgba(0,0,0,.4);
+	width: 13em;
+	background: rgba(255,  11,  36,  0.8);
 	border-radius: 5px;
 	margin-top: -10px;
+}
+.button{
+	text-align:center;
+	margin-top:-3em;
+}
+.button a{
+	 display:inline-block;
+    color:#FFF;
+    font-size:1.2em;
+    text-transform:uppercase;
+    background:#eb7d4b;
+    padding:18px 3em;
+    border-bottom:4px solid #c86a40;
+    border-radius:5px;
+   -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+   -o-border-radius:5px;
+    -webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+.button a:hover{
+	background:#F78B5A;
+}
+.button a:active{
+	position:relative;
+   	top:5px;
 }

@@ -8,26 +8,14 @@ body {
 	font-family: 'Julius Sans One', sans-serif;
 }
 
-
-
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table; 
+h1
+{
+    font-size: 46px;
 }
-
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
-
 
 header {
 	width: 100%;
-	height: 100px;
+	height: 5.5em;
 	background: #F0F8FF;
 	position: fixed;
 	z-index: 2;
@@ -40,26 +28,19 @@ nav {
 	margin: 0 auto;
 }
 
-.logo {
-	font-family: 'Lobster', cursive;
-	font-size: 30px;
-	float: left;
-	font-family: 'Julius Sans One', sans-serif;
-}
-
 
 /* Section Styles */
 
 .section {
-	max-width: 100%; 
+    max-width:100%;
 	height: 42em;
 	padding: 10px;
 }
 
 .section h2 {
 	color: #fff;
-	font-size: 6em;
-	font-weight: 200;
+    font-size: 4.5em;
+	font-weight: 200px;
 	text-align: center;
 	padding: 2.5em 0;
 }
@@ -80,10 +61,18 @@ nav {
 	background: #872657;
 }
 
+.five
+{
+    background: #1E9033;
+    height: 30em;
+}
+
 .img-responsive{
-	width: 13em;
-	background: rgba(255,  11,  36,  0.8);
-	border-radius: 5px;
+	width: 11em;
+	background: #F0F8FF;
+	border-radius: 10px;
+    border-style: outset; 
+    border-width:6px;
 	margin-top: -10px;
 }
 .button{

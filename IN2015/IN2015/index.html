@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-	<html ng-app="Home">
+	<html class="js">
 <head>
 <meta content="http://www.internegocios.org/index.html" type="og:url"/>
 <meta content="¡Registrate en la 7° Edición del Congreso Internegocios 2015!.
 Internegocios 2015 - La revolución del Emprendimiento,
 Dos días de grandes conferencias + Talleres ¡Asiste 20 y 21 de Abril!" property="og:description"/>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/ico" href="img/LogoOficial.ico">
 <link rel="stylesheet" type="text/css" href="http://garlun.net/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-<script type="text/javascript" src="http://garlun.net/angular/angular.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<link href="css/responsive-nav.css" rel="stylesheet">
+<script src="js/responsive-nav.js"></script>
 <title>Internegocios 2015 - La Revolución del Emprendimiento</title> 
 </head>
-<body ng-controller="HomeController">
-
+<body>
 <header class="cf">
-		  <nav>
+		  <nav class="nav-collapse nav-collapse-0 closed" aria-hidden="true" style="transition:max-height 284ms; position: absolute;">
+                      <ul>
+                        <li><a href="/acerca">Acerca</a></li>
+                        <!--<li><a href="#">Eventos</a></li>-->
+                        <li><a href="/aprende">Aprende</a></li>
+                        <!--<li><a href="#">Sedes</a></li>-->
+                      </ul>
+                    </nav>
 		  <center>
 		  		<div class="container-fluid">
 		  			<div class="row">
-		  				 <div class="col-xs-4  col-sm-4">
-			    <a href="#home"><img src="img/Internegocios.png" class="img-responsive" alt="Responsive image"></a>
+		  				 <div class="col-xs-4  col-sm-2">
+			    <a href="#home"><img src="img/Internegocios.png" class="photo" alt="Responsive image"></a>
 			    		</div>
-                        <div class="col-xs-4 col-sm-4">
-			    			<a href="#talleres"><h1 >{{"Talleres"}}</h1></a>
+                        <div class="hidden-xs col-sm-4">
+			    			<a href="#talleres"><h1 >Talleres</h1></a>
 			    		</div>
-  						<div class="col-xs-4 col-sm-4">
-  							<a href="#boletos"><h1 >{{"Conferencias"}}</h1></a>
+  						<div class="hidden-xs col-sm-4">
+  							<a href="#boletos"><h1 >Conferencias</h1></a>
   						</div>
 			    	</div>
 			    </div>
@@ -40,7 +46,77 @@ Dos días de grandes conferencias + Talleres ¡Asiste 20 y 21 de Abril!" propert
 		  <h2>Video/Home</h2>
 	</section>
 	<section class="section two" id="conferencias">
-  			<h2>Conferencias</h2>
+  		<div class="container">
+            <div class="row">
+                <div class="col-xs-5 col-sm-6">
+                    <dl>
+                        <dt>Taller 1</dt>
+                            <dd>- black hot drink</dd>
+                        <dt>Taler 2</dt>
+                            <dd>- white cold drink</dd>
+                        <dt>Taler 3</dt>
+                            <dd>- white hot drink</dd>
+                        <dt>Taler 4</dt>
+                            <dd>- black cold drink</dd>
+                    </dl>
+                </div>
+                <div class="col-xs-5 col-sm-6">
+                    <dl>
+                        <dt>Taller 5</dt>
+                            <dd>- black hot drink</dd>
+                        <dt>Taler 6</dt>
+                            <dd>- white cold drink</dd>
+                        <dt>Taler 7</dt>
+                            <dd>- white hot drink</dd>
+                        <dt>Taler 8</dt>
+                            <dd>- black cold drink</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5 col-sm-6">
+                    <dl>
+                        <dt>Taller 9</dt>
+                            <dd>- black hot drink</dd>
+                        <dt>Taler 10</dt>
+                            <dd>- white cold drink</dd>
+                        <dt>Taler 11</dt>
+                            <dd>- white hot drink</dd>
+                        <dt>Taler 12</dt>
+                            <dd>- black cold drink</dd>
+                    </dl>
+                </div>
+                <div class="col-xs-5 col-sm-6">
+                    <dl>
+                        <dt>Taller 13</dt>
+                            <dd>- black hot drink</dd>
+                        <dt>Taler 14</dt>
+                            <dd>- white cold drink</dd>
+                        <dt>Taler 15</dt>
+                            <dd>- white hot drink</dd>
+                        <dt>Taler 16</dt>
+                            <dd>- black cold drink</dd>
+                    </dl>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-xs-5 col-sm-6">
+                    <dl>
+                        <dt>Taller 17</dt>
+                            <dd>- black hot drink</dd>
+                        <dt>Taler 18</dt>
+                            <dd>- white cold drink</dd>
+                        <dt>Taler 19</dt>
+                            <dd>- white hot drink</dd>
+                        <dt>Taler 20</dt>
+                            <dd>- black cold drink</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <h2>Conferencias</h2>
+            </div>
+        </div>
 	</section>
 	<section class="section three" id="talleres">
 		  <h2>Talleres</h2>

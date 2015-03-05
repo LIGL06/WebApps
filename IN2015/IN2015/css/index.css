@@ -20,6 +20,7 @@ header {
 	position: fixed;
 	z-index: 2;
 	box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+   
 }
 
 
@@ -67,12 +68,13 @@ nav {
     height: 30em;
 }
 
-.img-responsive{
-	width: 11em;
+.photo{
+	width: 160px;
 	background: #F0F8FF;
 	border-radius: 10px;
     border-style: outset; 
-    border-width:6px;
+    border-width: 5px;
+    border-color: lightgrey;
 	margin-top: -10px;
 }
 .button{

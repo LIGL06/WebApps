@@ -1,7 +1,23 @@
-<!DOCTYPE html>
+<?php
+ 
+	session_start(); # Starts the session
+ 
+	session_unset(); #removes all the variables in the session
+ 
+	session_destroy(); #destroys the session
+ 
+	if(!$_SESSION['email'])
+    {
+   		echo "Successfully logged out!<br />";
+        echo "<a href='signin.php'>Sign In</a>";
+        echo "<br><a href='signup.php'>Sign Up</a>";
+    }
+	else
+    {   echo "Error Occured!!<br />";}
+ 
+?>
 <html>
-    
-<meta>
+<head>
     <meta charset="UTF-8">
     <meta name="Portfolio" content="Little Menu for Portfolio">
     <meta name="keywords" content="Web Developer">
@@ -11,20 +27,5 @@
     <meta content="SuperData Database" property="og:description"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 <title>SuperData - CRM</title>
-</meta>
-
-<body>
-
-<!-- multistep form -->
-<form id="msform">	
-	<!-- fieldsets -->
-	<fieldset>
-		<h2 class="fs-title">SuperData Sign In/Sign Up</h2>
-		<h3 class="fs-subtitle">This is step 1</h3>
-        <a href="signin.php"><input type="button" name="next" class="next action-button" value="Sign In" /></a>
-        <a href="signup.php"><input type="button" name="next" class="next action-button" value="Sign Up" /></a>
-	</fieldset>
-</form>
-    
-</body>
+</head>
 </html>

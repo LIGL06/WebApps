@@ -1,5 +1,7 @@
 /*custom font*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 /*basic reset*/
 * {margin: 0; padding: 0;}
@@ -130,6 +132,68 @@ body {
 	color: white;
 }
 
+a{
+color:black;
+font-size: 28px;
+text-align: center;
+}
+a:hover{
+color: darkslategrey;
+}
+a:after{
+color: greenyellow;
+}
 
+#welcome{
+margin-top: 400px;
+}
 
-
+.navbar .nav {
+  list-style-type: none;
+  height: 50px;
+  background: #6c9ddd;
+  -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+}
+.navbar .nav .nav-item {
+  display: block;
+  float: left;
+  position: relative;
+  background-color: #5c79bc;
+  background-position: 0 -5px;
+  background-size: 100% 110%;
+  transition: all 0.3s;
+}
+.navbar .nav .nav-item:hover {
+  background-position: 0 0;
+}
+.navbar .nav .nav-item:before {
+  content: '';
+  opacity: 0;
+  display: block;
+  background-color: #5c79bc;
+  width: 5px;
+  height: 8px;
+  position: absolute;
+  left: 50%;
+  top: -20%;
+  margin-left: -5px;
+  transition: all 0.3s;
+}
+.navbar .nav .nav-item:hover:before {
+  top: 0;
+  opacity: 1;
+}
+.navbar .nav .nav-item a {
+  display: block;
+  padding: 15px 30px;
+  text-decoration: none;
+  color: #EEE;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.navbar .nav .nav-item a:hover {
+  color: #d7d7d7;
+}

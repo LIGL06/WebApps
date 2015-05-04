@@ -26,7 +26,7 @@ public class Conexion {
     public Connection connectar() {
         Connection link = null;
         try {
-            Class.forName("org.gtj.mm.mysql.Driver");
+            Class.forName("org.gjt.mm.mysql.Driver");
             link = (Connection) DriverManager.getConnection(this.url,this.user,this.pass);
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showConfirmDialog(null, e);

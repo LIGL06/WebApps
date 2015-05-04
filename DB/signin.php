@@ -10,11 +10,7 @@
     <meta content="http://db.garlun.net/index.html" type="og:url"/>
     <meta content="SuperData Database" property="og:description"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="img/logo.png">
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
 <title>SuperData - CRM</title>
 </head>
 
@@ -54,7 +50,7 @@ $result = mysql_fetch_array($query);
 $result2 = mysql_fetch_array($query2);
     if($result[0]>0)
       {
-        echo '<script type="text/javascript" language="javascript"> window.open("home.html"); </script>'; 
+        echo '<script type="text/javascript" language="javascript"> window.open("home.php"); </script>'; 
         
       }
       else

@@ -18,8 +18,8 @@
 <div class="navbar">
   <ul class="nav">
     <li class="nav-item"><a href="home.php" ><i class="icon-fixed-width icon-home"></i>Home</a></li>
-    <li class="nav-item"><a href="materials.php"><i class="icon-fixed-width icon-coffee"></i>Clients</a></li>
-    <li class="nav-item"><a href="types.php"><i class="icon-fixed-width icon-camera-retro"></i>Type of Materials</a></li>
+    <li class="nav-item"><a href="materials.php"><i class="icon-fixed-width icon-coffee"></i>Order Status</a></li>
+    <li class="nav-item"><a href="types.php"><i class="icon-fixed-width icon-camera-retro"></i>Products Purchased</a></li>
     <li class="nav-item"><a href="payments.php"><i class="icon-fixed-width icon-user"></i>Payments Status</a></li>
     <li class="nav-item"><a href="stock.php"><i class="icon-fixed-width icon-envelope"></i>Stock/Inventory</a></li>
     <li class="nav-item"><a href="logout.php"><i class="icon-fixed-width icon-user"></i>Logout</a></li>
@@ -33,25 +33,21 @@
 	<!-- fieldsets -->
 	<fieldset>
 		<h2 class="fs-title">Fire!</h2>
-		<h3 class="fs-subtitle">Deploy all clients!</h3>
+		<h3 class="fs-subtitle">Deploy all orders!</h3>
 		<input type="submit" name="submit" class="submit action-button" value="Submit" />
 	</fieldset>
 </form>
-    
     <?php
 mysql_connect("localhost","garlunne_ligl","Luis_Ivan_06");
 mysql_select_db("garlunne_SuperData");
 if(isset($_POST["submit"])){
-$query = "SELECT * FROM  `client` ";
+$query = "SELECT * FROM  `Orders` ";
 $res= mysql_query($query);
 echo "<table border='1' align='center' width='30%'>"; 
-echo "<tr><td>Client_id</td><td>Client Name</td><td>Client Address</td><td>Client Email</td><td>Client Phone</td>";
+echo "<tr><td>Order ID</td><td>Order Status</td>";
 while($fila=mysql_fetch_assoc($res)){
-  echo "<tr><td><center><font color='black'>".$fila['client_id']."</font></center></td>";
-  echo "<td><center><font color='black'>".$fila['name']."</font></center></td>";
-  echo "<td><center><font color='black'>".$fila['address']."</font></center></td>";
-  echo "<td><center><font color='black'>".$fila['email']."</font></center></td>";
-  echo "<td><center><font color='black'>".$fila['phone_num']."</font></center></td>";
+  echo "<tr><td><center><font color='black'>".$fila['order_id']."</font></center></td>";
+  echo "<td><center><font color='black'>".$fila['order_status']."</font></center></td>";
 }
 echo "</table>";
 if(mysql_query($query)){

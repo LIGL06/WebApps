@@ -21,10 +21,11 @@
 <div class="navbar">
   <ul class="nav">
     <li class="nav-item"><a href="home.php" ><i class="icon-fixed-width icon-home"></i>Home</a></li>
-    <li class="nav-item"><a href="materials.php"><i class="icon-fixed-width icon-coffee"></i>Clients</a></li>
-    <li class="nav-item"><a href="types.php"><i class="icon-fixed-width icon-camera-retro"></i>Type of Materials</a></li>
+    <li class="nav-item"><a href="materials.php"><i class="icon-fixed-width icon-coffee"></i>Order Status</a></li>
+    <li class="nav-item"><a href="types.php"><i class="icon-fixed-width icon-camera-retro"></i>Products Purchased</a></li>
     <li class="nav-item"><a href="payments.php"><i class="icon-fixed-width icon-user"></i>Payments Status</a></li>
     <li class="nav-item"><a href="stock.php"><i class="icon-fixed-width icon-envelope"></i>Stock/Inventory</a></li>
+      <li class="nav-item"><a href="insert.php"><i class="icon-fixed-width icon-camera-retro"></i>Insert Client</a></li>
     <li class="nav-item"><a href="logout.php"><i class="icon-fixed-width icon-user"></i>Logout</a></li>
   </ul>
 </div>

@@ -20,7 +20,7 @@
 <body>
 
   <!-- multistep form -->
-<form id="msform" action="signup.php" method="post">
+<form id="msform" action="insert.php" method="post">
 	<!-- progressbar -->
 	<ul id="progressbar">
 		<li class="active">Account Setup</li>
@@ -31,8 +31,6 @@
 		<h2 class="fs-title">Create your account</h2>
 		<h3 class="fs-subtitle">This is step 1</h3>
 		<input type="text" name="email" placeholder="Email" />
-		<input type="password" name="pass" placeholder="Password" />
-		<input type="password" name="cpass" placeholder="Confirm Password" />
 		<input type="button" name="next" class="next action-button" value="Next" />
 	</fieldset>
 	<fieldset>
@@ -57,7 +55,6 @@
 if(isset($_POST["submit"])){
 $user_name = $_POST['name'];
 $user_email = $_POST['email'];
-$user_pass = $_POST['pass'];
 $user_phone= $_POST['phone'];
 $user_addres= $_POST['address'];
 if($user_name==''){
@@ -67,8 +64,8 @@ echo "<script>alert('Por favor inserta un email')</script>"; exit();}
 if($user_phone==''){
 echo "<script>alert('Por favor inserta un numero telefónico')</script>";
 exit();}
-$query = "insert into admins (name,address,email,phone_num,password) values 
-('$user_name','$user_addres','$user_email','$user_phone','$user_pass')";
+$query = "insert into client (name,address,email,phone_num) values 
+('$user_name','$user_addres','$user_email','$user_phone')";
 if(mysql_query($query)){
 echo "<script>alert('Registro satisfactorio')</script>";
 echo '<script type="text/javascript" language="javascript"> window.open("home.php"); </script>'; 

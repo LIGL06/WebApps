@@ -13,8 +13,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LuisIván
  */
-public class Zoologico{
-    
+public class Zoologico extends ArrayList{
+        ArrayList<Animal> Animales = new ArrayList <Animal>();
+        
     public Zoologico() {
     }
      
@@ -24,7 +25,7 @@ public class Zoologico{
         modelo = new DefaultTableModel(titulos,0);
     
         try {
-            ArrayList<Animal> Animales = new ArrayList <Animal>();
+            
             
             Animales.add(new Animal(1,"Elefante", "Asia",506.82,6));
                 for (int i = 0; i < Animales.size(); i++){
@@ -52,17 +53,17 @@ public class Zoologico{
         modelo = new DefaultTableModel(titulos,0);
     
         try {
-            ArrayList<Animal> Animales = new ArrayList <Animal>();
+           
             int n = 0;
                 Animales.add(new Animal(ID,name,pais,peso,edad));
-        for (Animal Animale : Animales) {
-            int id = Animale.getId();
-            name = Animale.getNombre();
-            pais = Animale.getPaisOrigen();
-            peso = Animale.getPeso();
-            edad = Animale.getEdad();
-            Object[] data = {id,name,pais,peso,edad};
-            modelo.addRow(data);
+                for (int i = 0; i < Animales.size(); i++){
+                    int id = Animales.get(i).getId();
+                    name = Animales.get(i).getNombre();
+                    pais = Animales.get(i).getPaisOrigen();
+                    peso = Animales.get(i).getPeso();
+                    edad = Animales.get(i).getEdad();
+                Object[] data = {id,name,pais,peso,edad};
+                    modelo.addRow(data);
         } 
             
         
@@ -80,7 +81,7 @@ public class Zoologico{
         modelo = new DefaultTableModel(titulos,0);
     
         try {
-            ArrayList<Animal> Animales = new ArrayList <Animal>();
+            
             int num = JOptionPane.showConfirmDialog(null, "¿Clausurar?");
             if(num!=0){
                 Animales.clear();
@@ -96,6 +97,31 @@ public class Zoologico{
             return modelo;
         }    
         return modelo;
+    }
+
+    public boolean existe(String nombre) {
+            for (Animal Animale : Animales) {
+                if (nombre.equals(Animale.getNombre())) {
+                    JOptionPane.showMessageDialog(null, "¡Si existe!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡No existe!");
+                }
+            }
+        return true;
+    } 
+
+    public int edadPromedio(int edad) { int count = 0;
+            for (Animal Animale : Animales) {
+                edad += edad;
+                count +=1;
+                int promedio;
+        promedio = (edad/count);
+            }
+            return edad;
+    }
+
+    public void edadPromedio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }

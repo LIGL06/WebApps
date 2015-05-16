@@ -7,7 +7,7 @@ package visual;
 
 import clases.Animal;
 import clases.Zoologico;
-import java.util.ArrayList;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -106,6 +106,36 @@ public class FormZoo extends javax.swing.JFrame {
         }
     }
     
+    void insertar (int ID, String name, String pais, double peso, int edad){
+        try {
+            DefaultTableModel modelo;
+            Zoologico func = new Zoologico();
+            modelo = func.insertar(ID,name,pais,peso,edad);
+            
+            tablaAnimales.setModel(modelo);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error Datos");
+        }
+    
+    }
+    
+    
+    void existe (String nombre){
+        try {
+            
+            Zoologico func = new Zoologico();
+            
+            JOptionPane.showMessageDialog(rootPane, "Verificando "+"|"+nombre+"|");
+            if(func.existe(nombre)!=true){
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Correcto "+"|"+nombre+"|");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error Datos");
+        }
+    
+    }
     
     
     /**
@@ -125,7 +155,7 @@ public class FormZoo extends javax.swing.JFrame {
         tablaAnimales = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        ListResultados = new javax.swing.JList();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -146,6 +176,7 @@ public class FormZoo extends javax.swing.JFrame {
         btnPesoUltimo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
+        lblCount = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -198,7 +229,7 @@ public class FormZoo extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
 
-        jScrollPane3.setViewportView(jList1);
+        jScrollPane3.setViewportView(ListResultados);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -270,9 +301,19 @@ public class FormZoo extends javax.swing.JFrame {
 
         btnExiste.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExiste.setText("¿Existe?");
+        btnExiste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExisteActionPerformed(evt);
+            }
+        });
 
         btnEdadPrimero.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnEdadPrimero.setText("Edad del Primero");
+        btnEdadPrimero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdadPrimeroActionPerformed(evt);
+            }
+        });
 
         btnPesoUltimo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPesoUltimo.setText("Peso del Ultimo");
@@ -372,6 +413,8 @@ public class FormZoo extends javax.swing.JFrame {
 
         btnBorrar.setText("Borrar");
 
+        lblCount.setText("Animales:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -381,7 +424,9 @@ public class FormZoo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblCount, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBorrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalir)
@@ -399,7 +444,8 @@ public class FormZoo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir)
-                    .addComponent(btnBorrar)))
+                    .addComponent(btnBorrar)
+                    .addComponent(lblCount)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -430,7 +476,8 @@ public class FormZoo extends javax.swing.JFrame {
     habilitar();
     btnInsertar.setText("Insertar Cambios");
         accion = "guardar";
-        
+        Zoologico func = new Zoologico();
+        lblCount.setText("Animales: "+ func.size());
     }//GEN-LAST:event_btnAnadirActionPerformed
 
     private void btnEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaActionPerformed
@@ -478,12 +525,35 @@ public class FormZoo extends javax.swing.JFrame {
         pais = txtPais.getText();
         peso = Double.parseDouble(txtPesoAnimal.getText());
         edad = Integer.parseInt(txtEdadAnimal.getText());
-       func.insertar(0,nombre,pais,peso,edad);
+            
+            insertar(0,nombre,pais,peso,edad);
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioActionPerformed
-        // TODO add your handling code here:
+        Zoologico func = new Zoologico();
+        func.edadPromedio();
+        ListResultados.add(func.edadPromedio());
     }//GEN-LAST:event_btnPromedioActionPerformed
+
+    private void btnExisteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExisteActionPerformed
+      if (txtNombre.getText().length() == 0){
+        JOptionPane.showConfirmDialog(rootPane, "Debes insertar Nombre");
+        txtNombre.requestFocus();
+        return;
+        }
+      String nombre;
+      nombre = txtNombre.getText();
+      Animal ani = new Animal();
+      Zoologico func = new Zoologico();
+      
+      existe(nombre);
+      
+    }//GEN-LAST:event_btnExisteActionPerformed
+
+    private void btnEdadPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdadPrimeroActionPerformed
+        Zoologico func = new Zoologico();
+        ListResultados.add((Component) func.get(1));
+    }//GEN-LAST:event_btnEdadPrimeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -521,6 +591,7 @@ public class FormZoo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList ListResultados;
     private javax.swing.JButton btnAnadir;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnEdadPrimero;
@@ -536,7 +607,6 @@ public class FormZoo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -545,6 +615,7 @@ public class FormZoo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCount;
     private javax.swing.JTable tablaAnimales;
     private javax.swing.JTextField txtEdadAnimal;
     private javax.swing.JTextField txtNombre;

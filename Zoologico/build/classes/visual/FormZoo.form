@@ -78,7 +78,9 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel2" max="32767" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCount" min="-2" pref="145" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnBorrar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -101,6 +103,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCount" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -193,7 +196,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
+                <Component class="javax.swing.JList" name="ListResultados">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="0"/>
@@ -425,6 +428,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xbf;Existe?"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExisteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEdadPrimero">
               <Properties>
@@ -433,6 +439,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Edad del Primero"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEdadPrimeroActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnPesoUltimo">
               <Properties>
@@ -455,6 +464,11 @@
         <Component class="javax.swing.JButton" name="btnBorrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Borrar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCount">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Animales:"/>
           </Properties>
         </Component>
       </SubComponents>

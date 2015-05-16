@@ -120,6 +120,16 @@ public class FormZoo extends javax.swing.JFrame {
     
     }
     
+    void eliminar(int ID){
+        try {
+            DefaultTableModel modelo;
+            Zoologico func = new Zoologico();
+            modelo = func.eliminar();
+            tablaAnimales.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error de Datos");
+        }
+    }
     
     void existe (String nombre){
         try {
@@ -174,6 +184,8 @@ public class FormZoo extends javax.swing.JFrame {
         btnExiste = new javax.swing.JButton();
         btnEdadPrimero = new javax.swing.JButton();
         btnPesoUltimo = new javax.swing.JButton();
+        preguntaUno = new javax.swing.JButton();
+        preguntaDos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         lblCount = new javax.swing.JLabel();
@@ -271,6 +283,11 @@ public class FormZoo extends javax.swing.JFrame {
 
         btnPesados.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPesados.setText("Animales pesados");
+        btnPesados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesadosActionPerformed(evt);
+            }
+        });
 
         btnAnadir.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnAnadir.setText("Habilitar Zoo");
@@ -317,11 +334,52 @@ public class FormZoo extends javax.swing.JFrame {
 
         btnPesoUltimo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPesoUltimo.setText("Peso del Ultimo");
+        btnPesoUltimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesoUltimoActionPerformed(evt);
+            }
+        });
+
+        preguntaUno.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        preguntaUno.setText("Por Pais");
+        preguntaUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preguntaUnoActionPerformed(evt);
+            }
+        });
+
+        preguntaDos.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        preguntaDos.setText("Por Animales");
+        preguntaDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preguntaDosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnExiste, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInsertar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPromedio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPesados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRemplaza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnElimina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAnadir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnEdadPrimero)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnPesoUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,27 +403,10 @@ public class FormZoo extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(txtPesoAnimal)))
-                .addGap(115, 115, 115))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnExiste, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInsertar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPromedio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnPesados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRemplaza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnElimina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAnadir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnEdadPrimero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnPesoUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(preguntaUno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(preguntaDos, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,11 +414,13 @@ public class FormZoo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaUno))
+                .addGap(10, 10, 10)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaDos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -531,8 +574,7 @@ public class FormZoo extends javax.swing.JFrame {
 
     private void btnPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioActionPerformed
         Zoologico func = new Zoologico();
-        func.edadPromedio();
-        ListResultados.add(func.edadPromedio());
+        ListResultados.add(valor);
     }//GEN-LAST:event_btnPromedioActionPerformed
 
     private void btnExisteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExisteActionPerformed
@@ -552,8 +594,34 @@ public class FormZoo extends javax.swing.JFrame {
 
     private void btnEdadPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdadPrimeroActionPerformed
         Zoologico func = new Zoologico();
-        ListResultados.add((Component) func.get(1));
+        ListResultados.add(valor);
     }//GEN-LAST:event_btnEdadPrimeroActionPerformed
+
+    private void btnPesoUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesoUltimoActionPerformed
+        Zoologico func = new Zoologico();
+        double peso = 0;
+        StringBuilder sb = new StringBuilder();
+sb.append("");
+sb.append(func.pesoUltimo());
+String strI = sb.toString();
+        ListResultados.setToolTipText(strI);
+    }//GEN-LAST:event_btnPesoUltimoActionPerformed
+
+    private void preguntaUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguntaUnoActionPerformed
+        JOptionPane.showInputDialog("Pais a buscar: ");
+        String pais = null;
+        Zoologico func = new Zoologico();
+        func.buscar(pais);
+    }//GEN-LAST:event_preguntaUnoActionPerformed
+
+    private void btnPesadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesadosActionPerformed
+        
+    }//GEN-LAST:event_btnPesadosActionPerformed
+
+    private void preguntaDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preguntaDosActionPerformed
+        Zoologico func = new Zoologico();
+        func.totalAnimales();
+    }//GEN-LAST:event_preguntaDosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -616,6 +684,8 @@ public class FormZoo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCount;
+    private javax.swing.JButton preguntaDos;
+    private javax.swing.JButton preguntaUno;
     private javax.swing.JTable tablaAnimales;
     private javax.swing.JTextField txtEdadAnimal;
     private javax.swing.JTextField txtNombre;

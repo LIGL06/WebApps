@@ -5,7 +5,9 @@
  */
 package clases;
 
+import java.awt.PopupMenu;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -109,19 +111,47 @@ public class Zoologico extends ArrayList{
             }
         return true;
     } 
-
-    public int edadPromedio(int edad) { int count = 0;
-            for (Animal Animale : Animales) {
+    
+    public int edadPromedio() { int edad=0; int count = 0;
+        for (Animal Animale : Animales) {
                 edad += edad;
                 count +=1;
                 int promedio;
         promedio = (edad/count);
             }
-            return edad;
+        return 0;
     }
 
-    public void edadPromedio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int edadPrimero() {int numero = 0;
+       Iterator it = Animales.iterator();
+    	while (it.hasNext()){
+    		System.out.print(it.next());
+    	} System.out.println();
+    return numero;
     }
+    
+
+    public double pesoUltimo() {  double peso = 0;
+        Iterator it = Animales.iterator();
+    	while (it.hasNext()){
+    		System.out.print(it.next());
+    	} System.out.println();
+    return peso;
+    }
+
+    public void buscar(String pais) {
+        for(int i = 0; i<Animales.size();i++){
+        if(!"".equals(Animales.get(i).getPaisOrigen())){
+        JOptionPane.showMessageDialog(null, "¡Si existe!: "+i+" Animales");
+        }
+        }
+        }
   
+    public void totalAnimales(){
+            for (Animal Animale : Animales) {
+            JOptionPane.showMessageDialog(null, "Existen: "+Animales.size());
+            }
+            
+    }
 }
+  
